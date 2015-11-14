@@ -5,3 +5,4 @@ RUN npm config set cache /cache/npm --global && \
         bower babel babel-cli --no-bin-links --loglevel warn --no-color && \
     rm -rf /cache/*
 
+
