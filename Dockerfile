@@ -1,13 +1,7 @@
 FROM node:latest
 
-RUN npm config set cache /cache/npm --global
-
-RUN npm install -g webpack --no-bin-links --loglevel warn --no-color
-RUN npm install -g webpack-dev-server --no-bin-links --loglevel warn --no-color
-RUN npm install -g typescript tsd --no-bin-links --loglevel warn --no-color
-RUN npm install -g bower --no-bin-links --loglevel warn --no-color
-RUN npm install -g babel babel-cli --no-bin-links --loglevel warn --no-color
-
-
-RUN rm -rf /cache/*
+RUN npm config set cache /cache/npm --global && \
+    npm install -g webpack@1.12.2 webpack-dev-server typescript tsd \
+        bower babel babel-cli --no-bin-links --loglevel warn --no-color && \
+    rm -rf /cache/*
 
